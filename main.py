@@ -17,19 +17,19 @@ user_log.get_username(name)
 
 while True:
 	
-	a = random.randint(65,122)
-	sys.stdout.writelines(chr(a))
-	b = str(input('\n>'))
+	rand_no = random.randint(65,122)
+	sys.stdout.writelines(chr(rand_no))
+	input_str = str(input('\n>'))
 
-	if len(b) < 2 and a == ord(b):
+	if len(input_str) < 2 and rand_no == ord(input_str):
 		user_log.correct_response()
-	elif b.lower() == 'quit':
+	elif input_str.lower() == 'quit':
 		user_log.log.update({'end_time':time.time()})
 		user_log.score()
 		user_log.speed()
 		user_log.quit()
 		break
-	elif b.lower() == 'restart':
+	elif input_str.lower() == 'restart':
 		user_log.log.update({'end_time':time.time()})
 		user_log.score()
 		user_log.speed()
